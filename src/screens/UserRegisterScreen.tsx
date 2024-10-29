@@ -365,8 +365,8 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   selected: {
-    backgroundColor: '#2C8C8C',
-    borderColor: '#2C8C8C',
+    backgroundColor: '#2bc96d',
+    borderColor: '#2bc96d',
   },
   input: {
     borderWidth: 1,

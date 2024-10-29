@@ -68,7 +68,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F5F5',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 80, // Adicionei um paddingTop para acomodar o Header
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     paddingVertical: 15,
-    backgroundColor: '#2C8C8C',
+    backgroundColor: '#2bc96d',
     borderRadius: 20,
     marginBottom: 20,
     elevation: 5,

@@ -112,7 +112,7 @@ const UserListScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F5F5',
+    backgroundColor: '#fff',
     padding: 20,
   },
   header: {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   addButton: {
-    backgroundColor: '#2C8C8C',
+    backgroundColor: '#2bc96d',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 10,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   activeUser: {
     backgroundColor: '#D9EAD3',
-    borderColor: '#2C8C8C',
+    borderColor: '#2bc96d',
     borderWidth: 2,
   },
   inactiveUser: {
