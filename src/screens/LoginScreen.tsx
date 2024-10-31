@@ -178,11 +178,137 @@
 
 // export default LoginScreen;
 
-
-
 // LoginScreen.tsx
+// import React, { useState, useEffect } from 'react';
+// import { View, StyleSheet, TextInput, Alert, Text,Image } from 'react-native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// import { Button } from 'react-native-paper';
+// import { StackNavigationProp } from '@react-navigation/stack';
+// import { useNavigation } from '@react-navigation/native';
+// import axios from 'axios'; // Importação do axios
+
+// type RootStackParamList = {
+//   Home: undefined;
+//   Login: undefined;
+// };
+
+// type LoginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
+
+// const LoginScreen = () => {
+//   const [email, setEmail] = useState<string>('');
+//   const [password, setPassword] = useState<string>('');
+//   const navigation = useNavigation<LoginScreenProp>();
+
+//   useEffect(() => {
+//     const checkUserLoggedIn = async () => {
+//       const user = await AsyncStorage.getItem('user');
+
+//       if (user) {
+//         const userProfile = JSON.parse(user).profile;
+
+//         let route = '';
+
+//         if (userProfile === 'admin') {
+//           route = 'Home';
+//         } else if (userProfile === 'filial') {
+//           route = 'MovementList'; // Adicione o nome da tela correta
+//            } else if (userProfile === 'motorista') { // Adicionei esta verificação
+//           route = 'DriverMovementList'; // Nome da tela para motorista
+//         }
+
+//         navigation.reset({
+//           index: 0,
+//           routes: [{ name: route }],
+//         });
+//       }
+//     };
+//     checkUserLoggedIn();
+//   }, []);
+
+//   const handleLogin = async () => {
+//     if (email === '' || password === '') {
+//       Alert.alert('Erro', 'Preencha todos os campos.');
+//       return;
+//     }
+
+//     try {
+//       const response = await axios.post(
+//         process.env.EXPO_PUBLIC_API_IP + '/login',
+//         {
+//           email,
+//           password,
+//         }
+//       );
+
+//       const data = response.data; // Captura a resposta dos dados
+
+//       if (response.status === 200) {
+//         await AsyncStorage.setItem('user', JSON.stringify(data));
+
+//         const userProfile = data.profile;
+
+//         let route = '';
+
+//         if (userProfile === 'admin') {
+//           route = 'Home';
+//         } else if (userProfile === 'filial') {
+//           route = 'MovementList'; // Adicione o nome da tela correta
+//         } else {
+//           route = 'ProductList'; // Adicione o nome da tela correta
+//         }
+
+//         navigation.reset({
+//           index: 0,
+//           routes: [{ name: route }],
+//         });
+//       } else {
+//         Alert.alert('Erro', 'Credenciais inválidas.');
+//       }
+//     } catch (error) {
+//       Alert.alert('Erro', 'Não foi possível realizar o login.');
+//     }
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Image
+//       source={require('../../assets/iconelouvadeus.png')}
+//       style={styles.image}
+//     />
+
+//       <Text style={styles.title}>Guarda-Chuva Farmácias</Text>
+
+//       <TextInput
+//         style={styles.input}
+//         placeholder="E-mail"
+//         value={email}
+//         onChangeText={setEmail}
+//         keyboardType="email-address"
+//         autoCapitalize="none"
+//         placeholderTextColor="#A9A9A9"
+//       />
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Senha"
+//         value={password}
+//         onChangeText={setPassword}
+//         secureTextEntry
+//         placeholderTextColor="#A9A9A9"
+//       />
+//       <Button
+//         mode="contained"
+//         onPress={handleLogin}
+//         style={styles.button}
+//         labelStyle={styles.buttonText}
+//       >
+//         Entrar
+//       </Button>
+//     </View>
+//   );
+// };
+
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, Alert, Text,Image } from 'react-native';
+import { View, StyleSheet, TextInput, Alert, Text, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button } from 'react-native-paper';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -192,6 +318,8 @@ import axios from 'axios'; // Importação do axios
 type RootStackParamList = {
   Home: undefined;
   Login: undefined;
+  MovementList: undefined; // Adicionei esta linha
+  DriverMovementList: undefined; // Adicionei esta linha
 };
 
 type LoginScreenProp = StackNavigationProp<RootStackParamList, 'Login'>;
@@ -206,16 +334,17 @@ const LoginScreen = () => {
       const user = await AsyncStorage.getItem('user');
 
       if (user) {
-        const userProfile = JSON.parse(user).profile;
+        const userProfile = JSON.parse(user).profile; //
 
         let route = '';
 
         if (userProfile === 'admin') {
           route = 'Home';
         } else if (userProfile === 'filial') {
-          route = 'MovementList'; // Adicione o nome da tela correta
-        } else {
-          route = 'ProductList'; // Adicione o nome da tela correta
+          route = 'MovementList'; // Nome da tela para filial
+        } else if (userProfile === 'motorista') {
+          // Adicionei esta verificação
+          route = 'DriverMovementList'; // Nome da tela para motorista
         }
 
         navigation.reset({
@@ -225,7 +354,7 @@ const LoginScreen = () => {
       }
     };
     checkUserLoggedIn();
-  }, []);
+  }, [navigation]);
 
   const handleLogin = async () => {
     if (email === '' || password === '') {
@@ -254,9 +383,9 @@ const LoginScreen = () => {
         if (userProfile === 'admin') {
           route = 'Home';
         } else if (userProfile === 'filial') {
-          route = 'MovementList'; // Adicione o nome da tela correta
+          route = 'MovementList';
         } else {
-          route = 'ProductList'; // Adicione o nome da tela correta
+          route = 'DriverMovementList';
         }
 
         navigation.reset({
@@ -274,9 +403,9 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <Image
-      source={require('../../assets/iconelouvadeus.png')}
-      style={styles.image}
-    />
+        source={require('../../assets/iconelouvadeus.png')}
+        style={styles.image}
+      />
 
       <Text style={styles.title}>Guarda-Chuva Farmácias</Text>
 

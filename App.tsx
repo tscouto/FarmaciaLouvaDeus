@@ -81,6 +81,7 @@ import UserRegisterScreen from './src/screens/UserRegisterScreen';
 import ProductListScreen from './src/screens/ProductListScreen'; // Importando a tela de Listagem de Produtos
 import MovementListScreen from './src/screens/MovementListScreen'; // Importando a tela de Listagem de Movimentações
 import MovementScreen from './src/screens/MovementScreen'; // Importando a tela de Cadastro de Movimentação
+import DriverMovementListScreen from './src/screens/DriverMovementListScreen';
 
 const Stack = createStackNavigator();
 
@@ -127,6 +128,11 @@ const App = () => {
           name="Movement"
           component={MovementScreen}
           options={{ title: 'Cadastrar Movimentação' }}
+        />
+        <Stack.Screen
+          name="DriverMovementList"
+          component={DriverMovementListScreen}
+          options={{ title: 'Movimentações para Motorista' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
