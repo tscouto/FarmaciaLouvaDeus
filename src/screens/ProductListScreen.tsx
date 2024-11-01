@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   searchButton: {
-    backgroundColor: '#00796b',
+    backgroundColor: '#2bc96d',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   productCount: {
     fontSize: 16,
-    color: '#00796b',
+    color: '#2bc96d',
     marginBottom: 10,
     fontWeight: 'bold',
   },
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: '#00796b',
+    borderColor: '#2bc96d',
   },
   productImage: {
     width: 100,
@@ -151,16 +151,16 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#00796b',
+    color: '#2bc96d',
   },
   storeName: {
     fontSize: 14,
-    color: '#00796b',
+    color: '#2bc96d',
     marginTop: 5,
   },
   quantity: {
     fontSize: 14,
-    color: '#00796b',
+    color: '#2bc96d',
     marginTop: 5,
   },
   description: {

@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ userName, onLogout }) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: '#2C8C8C',
+    backgroundColor: '#2bc96d',
     paddingVertical: 10,
     paddingHorizontal: 15,
     flexDirection: 'row',

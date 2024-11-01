@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     paddingTop: 80,
   },
   addButton: {
-    backgroundColor: '#00796b',
+    backgroundColor: '#2bc96d',
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
@@ -264,11 +264,11 @@ const styles = StyleSheet.create({
     padding: 15,
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: '#00796b',
+    borderColor: '#2bc96d',
   },
   label: {
     fontWeight: 'bold',
-    color: '#00796b',
+    color: '#2bc96d',
     marginBottom: 5,
   },
   value: {

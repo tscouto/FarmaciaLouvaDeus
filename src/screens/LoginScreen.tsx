@@ -407,7 +407,7 @@ const LoginScreen = () => {
         style={styles.image}
       />
 
-      <Text style={styles.title}>Guarda-Chuva Farmácias</Text>
+      <Text style={styles.title}>Farmacia Louva Deus</Text>
 
       <TextInput
         style={styles.input}
