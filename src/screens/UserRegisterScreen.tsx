@@ -201,11 +201,50 @@ const UserRegisterScreen = () => {
 
   const navigation = useNavigation();
 
-  const handleProfileChange = (newProfile) => {
-    setProfile(newProfile);
-    setDocument(''); // Limpa o campo do documento
-  };
+  // const handleProfileChange = (newProfile) => {
+  //   setProfile(newProfile);
+  //   setDocument(''); // Limpa o campo do documento
+  // };
 
+
+  // const handleSubmit = async () => {
+  //   if (password !== confirmPassword) {
+  //     Alert.alert('Erro', 'As senhas não coincidem');
+  //     return;
+  //   }
+  //   if (!name || !document || !address || !email || !password) {
+  //     Alert.alert('Erro', 'Preencha todos os campos');
+  //     return;
+  //   }
+
+  //   const userData = {
+  //     profile,
+  //     name,
+  //     document,
+  //     full_address: address,
+  //     email,
+  //     password,
+  //   };
+
+  //   try {
+  //     const response = await axios.post(
+  //       process.env.EXPO_PUBLIC_API_IP + '/register',
+  //       userData
+  //     );
+
+  //     setTimeout(() => {
+  //       Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
+  //       console.log(response.data);
+  //       navigation.navigate('Home');
+  //     }, 2000);
+  //   } catch (error) {
+  //     Alert.alert(
+  //       'Erro',
+  //       'Não foi possível cadastrar o usuário. Tente novamente.'
+  //     );
+  //     console.error(error);
+  //   }
+  // };
 
   const handleSubmit = async () => {
     if (password !== confirmPassword) {
@@ -216,33 +255,43 @@ const UserRegisterScreen = () => {
       Alert.alert('Erro', 'Preencha todos os campos');
       return;
     }
-
+  
     const userData = {
       profile,
       name,
-      document,
+      document: document.replace(/[^\d]/g, ''), // Remove a formatação
       full_address: address,
       email,
       password,
     };
-
+  
+    console.log('Dados enviados:', userData); // Log para verificar os dados enviados
+  
     try {
       const response = await axios.post(
         process.env.EXPO_PUBLIC_API_IP + '/register',
         userData
       );
-
+  
       setTimeout(() => {
         Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
         console.log(response.data);
         navigation.navigate('Home');
       }, 2000);
     } catch (error) {
-      Alert.alert(
-        'Erro',
-        'Não foi possível cadastrar o usuário. Tente novamente.'
-      );
-      console.error(error);
+      if (error.response) {
+        console.error('Erro no backend:', error.response.data); // Log detalhado
+        Alert.alert(
+          'Erro',
+          `Não foi possível cadastrar o usuário. Erro: ${error.response.data.message || 'Desconhecido'}`
+        );
+      } else {
+        console.error(error);
+        Alert.alert(
+          'Erro',
+          'Não foi possível cadastrar o usuário. Tente novamente.'
+        );
+      }
     }
   };
 
