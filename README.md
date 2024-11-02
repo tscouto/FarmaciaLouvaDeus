@@ -96,6 +96,8 @@ Você pode visualizar as capturas de tela do projeto nos seguintes links:
 - Feedback visual em tempo real no cadastro de usuários e produtos.
 - Melhorias na tela de pesquisa de produtos com sugestões automáticas e filtros adicionais.
 
+-[![Assista ao vídeo do projeto](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg)](https://drive.google.com/file/d/1s5Fb18jLHLM7g1sJW2mEqLh77IBtdk_f/view?usp=sharing)
+
 
 
 
