@@ -19,36 +19,52 @@ O projeto **Farmácia Louva Deus** é um aplicativo desenvolvido em React Native
 ### 1. Tela de Splash Screen
 - **Função**: Tela inicial exibida durante o carregamento do aplicativo.
 - **Ação**: Apresenta o logo da farmácia e uma breve mensagem de boas-vindas, antes de redirecionar para a tela de login.
+![image](https://github.com/user-attachments/assets/7323b065-7da9-4759-b2d5-a4ace38f663c)
+
 
 ### 2. Tela de Login
 - **Função**: Permite que usuários existentes façam login em suas contas.
 - **Campos**: Email e Senha.
 - **Ação**: O usuário insere suas credenciais para acessar o sistema. Se as informações estiverem corretas, é redirecionado para a tela principal do aplicativo.
 
+![Menu de Login](https://github.com/user-attachments/assets/b1374017-9c0f-4b9c-9add-5f28065cc964)
+
 ### 3. Tela de Cadastro de Usuário
 - **Função**: Permite que novos usuários se cadastrem no sistema.
 - **Campos**: Nome, CPF/CNPJ, Endereço, Email e Senha.
 - **Ação**: O usuário pode criar sua conta, escolhendo entre os perfis de motorista ou filial.
+
+![Cadastrar Movimentação](https://github.com/user-attachments/assets/072e6343-c103-4f14-b8fd-b7c94b10f6e7)
 
 ### 4. Tela de Cadastro de Motorista
 - **Função**: Específica para motoristas se cadastrarem no sistema.
 - **Campos**: Nome, CPF, Endereço, Telefone, Email e Senha.
 - **Ação**: O motorista fornece suas informações e pode se cadastrar, permitindo o acesso ao sistema com um perfil especializado.
 
+- ![Cadastrar Movimentação](https://github.com/user-attachments/assets/4c3a06c3-3276-4c3d-be3d-c83358a08901)
+
+
 ### 5. Tela de Entrega de Medicamentos
 - **Função**: Permite o registro e confirmação da entrega de medicamentos.
 - **Informações**: O usuário visualiza a lista de medicamentos que estão aguardando entrega.
 - **Ação**: O usuário pode usar a câmera do dispositivo para escanear o código de barras do medicamento, confirmando assim a entrega. Após a confirmação, o status do medicamento é atualizado para "entregue".
+- ![Cadastrar Movimentação](https://github.com/user-attachments/assets/5bd6c036-8535-4013-99fd-94b52c05b5a1)
+
 
 ### 6. Tela de Cadastro de Entrega
 - **Função**: Facilita o registro de novas entregas por filial no sistema.
 - **Campos**: Nome do medicamento, descrição, dosagem e quantidade disponível.
 - **Ação**: Após preencher os dados, o usuário pode salvar o medicamento na lista de produtos da farmácia.
 
+- ![Tela movimentação motorista](https://github.com/user-attachments/assets/e0af3457-7bfa-4dca-9f4d-d4e4f4ef5cd1)
+
+
 ### 7. Tela de Consulta de Medicamentos
 - **Função**: Permite a busca e visualização de medicamentos cadastrados.
 - **Recursos**: O usuário pode pesquisar por nome ou categoria e visualizar detalhes de cada medicamento.
 - **Ação**: Informações como descrição e dosagem são exibidas para ajudar o usuário a identificar rapidamente os medicamentos.
+
+- ![Tela movimentação motorista](https://github.com/user-attachments/assets/a7cb7cc7-197a-4b92-84ca-8c07cb8aae14)
 
 
 
@@ -97,7 +113,7 @@ Você pode visualizar as capturas de tela do projeto nos seguintes links:
 - Feedback visual em tempo real no cadastro de usuários e produtos.
 - Melhorias na tela de pesquisa de produtos com sugestões automáticas e filtros adicionais.
 
--[![Assista ao vídeo do projeto](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/maxresdefault.jpg)](https://drive.google.com/file/d/1s5Fb18jLHLM7g1sJW2mEqLh77IBtdk_f/view?usp=sharing)
+
 
 
 
