@@ -79,7 +79,8 @@ Você pode visualizar as capturas de tela do projeto nos seguintes links:
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/tscouto/ProjetoModulo_01_Tiago.git
+
+   git clone  https://github.com/tscouto/FarmaciaLouvaDeus.git
    
 2. **Instale as dependências:**
    ```bash
